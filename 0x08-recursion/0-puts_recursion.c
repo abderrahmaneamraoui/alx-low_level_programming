@@ -1,16 +1,18 @@
 #include "main.h"
 /*
  *_put_recursion print a string ,followed by new line
- *@s:the string
- *@Return:void
+ *@s:pointer to char
+ *@Return:nothing
 */
-void _puts_recursion(char *s)
+void _put_recursion(char *s)
 {
-	if (*s == '\0')
+	if (*s != '\0')
 	{
-		putchar('\n');
-		return;
+		_putchar(*s);
+			_puts_recursion(s + 1);
 	}
-	putchar(*s);
-	_puts_recursion(str);
+	else
+	{
+		_putchar('/n');
+	}
 }
