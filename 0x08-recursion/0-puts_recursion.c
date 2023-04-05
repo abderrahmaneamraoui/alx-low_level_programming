@@ -1,24 +1,19 @@
 #include "main.h"
 
 /**
- * _print_rev_recursion - function declaration
- * @s: the string
- */
-
-void _print_rev_recursion(char *s);
-
-/**
- *_print_rev_recursion 
- * @s: the string to recurse
- * Description: recurses through a string s and prints it in reverse
+ * _puts_recursion - prints a string followed by a new line
+ * @s: string to be printed
+ *
  * Return: void
  */
-
-void _print_rev_recursion(char *s)
+void _puts_recursion(char *s)
 {
-	if (*s)
+	if (*s == '\0')
 	{
-		_print_rev_recursion(s + 1);
-		_putchar(*s);
+		_putchar('\n'); /* base case: end of string */
+		return;
 	}
+
+	_putchar(*s); /* print current character */
+	_puts_recursion(s + 1); /* recursively call function with next character */
 }
