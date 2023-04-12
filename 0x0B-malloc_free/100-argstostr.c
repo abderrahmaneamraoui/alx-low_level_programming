@@ -1,12 +1,9 @@
-"ac" - an integer representing the number of arguments passed to the program.
-"av" - a pointer to an array of strings representing the arguments passed to the program.
-
 #include "main.h"
 #include <stdlib.h>
 /**
  * argstostr - Main Entry
  * @ac: an integer representing the number of arguments passed to the program
- * @av: - a pointer to an array of strings
+ * @av: - a pointer to an array of string
  * Return: 0
  */
 char *argstostr(int ac, char **av)
