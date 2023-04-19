@@ -5,11 +5,11 @@
  * array_iterator - Executes a function as a parameter
  * on each element of an array
  *
- * @array: An array of paramters (values) to be passed to @action
+ * @array: : This parameter is an array of values that will be passed to the function pointed to by the @action parameter.
  *
- * @size: Size/length of @array
+ * @size: This parameter specifies the size or length of the array
  *
- * @action: Pointer to a function
+ * @action: This parameter is a pointer to a function that will be executed on each
  */
 
 void array_iterator(int *array, size_t size, void (*action)(int))
