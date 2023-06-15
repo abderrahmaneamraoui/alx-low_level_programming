@@ -1,13 +1,38 @@
 #include "lists.h"
-def is_palindrome(n):
-    return str(n) == str(n)[::-1]
 
-largest_palindrome = 0
-for i in range(999, 99, -1):
-    for j in range(i, 99, -1):
-        product = i * j
-        if product > largest_palindrome and is_palindrome(product):
-            largest_palindrome = product
+int isPalindrome(int number) {
+int reversed = 0;
+int temp = number;
 
-with open("102-result", "w") as file:
-    file.write(str(largest_palindrome))
+while (temp > 0) {
+reversed = reversed * 10 + temp % 10;
+temp /= 10;
+}
+
+return (reversed == number);
+}
+
+int main() {
+int largestPalindrome = 0;
+
+for (int i = 999; i >= 100; i--) {
+for (int j = 999; j >= 100; j--) {
+int product = i * j;
+if (isPalindrome(product) && product > largestPalindrome) {
+largestPalindrome = product;
+}
+}
+}
+
+// Save the result in the file
+FILE *file = fopen("102-result", "w");
+if (file != NULL) {
+fprintf(file, "%d", largestPalindrome);
+fclose(file);
+printf("Result saved in the file '102-result'.\n");
+} else {
+printf("Unable to open the file for writing.\n");
+}
+
+return 0;
+}
